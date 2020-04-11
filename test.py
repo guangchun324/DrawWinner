@@ -1,5 +1,6 @@
 import csv
 import operator
+from sympy.utilities.iterables import multiset_permutations
 
 ls = {}
 ans = []
@@ -65,7 +66,10 @@ def main():
     
     sample_prize = [100, 80, 50, 10, 10, 10, 10, 10, 10,
                     10, 10, 10, 10, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
-
+    
+    permu_prize = list(multiset_permutations(sample_prize))
+    print(permu_prize)
+    
     for counter in range(0, len(sample_prize)):
         print(sample_prize)
         dp(expected_val, [], 0, sorted_list, sample_prize, len(sample_prize), 0)
